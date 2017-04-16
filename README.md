@@ -19,7 +19,7 @@ The current app can already parse pasted signature-data and save it into a simpl
 
 The actuall (unfinished) app, a simple HTML5 file containing just CSS, HTML and JavaScript (and some additional notes), is in the  `bin/` folder.
 
-You will need a working version of Neo4j beforehand. Otherwise just download the HTML-file and open it in your favourite web browser to try it out. Feel free to fork the code.
+You will need a working version of Neo4j beforehand. Otherwise just download the HTML-file and open it in your favourite web browser to try it out. Feel free to fork or steal the code.
 
 ## Usage
 
