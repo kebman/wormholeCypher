@@ -6,6 +6,8 @@ Goal: A small HTML5 app that makes Cypher commands for Neo4j out of pasted text,
 
 The Cypher commands can be dropped into the Neo4j, the grap database, so you can get an overview of your journey in and out of wormhole space.
 
+This app is just for fun.
+
 ## To Do
 
 1. Write code to parse pasted bookmark-data
