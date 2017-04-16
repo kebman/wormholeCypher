@@ -73,3 +73,11 @@ Legend:
 The fourth `-` and the last `[exit-SIG]` are optional.
 
 `[exit-SIG]` is the signature code for the other side of the wormhole, as it shows up in the next system.
+
+## Neo4j Data Model
+
+The assumption is that a _system_ has _signatures_: `(system)-[HAS]->(signature)`. Thus the relationship between signatures and systems are that any list of signatures are naturally linked to their respective system. 
+
+A wormhole consists of two nodes; that of the entry signature that belongs to the system you're currently in, and the exit signature that belongs to the system on the other side of the wormhole, or the next system if you will. Since regular signatures are already linked to their respective systems, the second step is to link the wormhole entry-signature in one system to the wormhole exit-signature in the next system: `(entry)-[CONNECTS_TO]->(exit)`
+
+And that's basically it. ^^ 
