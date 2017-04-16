@@ -3,9 +3,11 @@ A small HTML5 app that makes Cypher commands for Neo4j out of pasted text, copie
 
 The Cypher commands can be dropped into the Neo4j, the grap database, so you can get an overview of your journey in and out of wormhole space.
 
-## App
+## App Installation
 
 The actuall (unfinished) app, a simple HTML5 file containing just CSS, HTML and JavaScript (and some additional notes), is in the  `bin/` folder.
+
+No installation is necessary. Just download the file and open it in your favourite web browser to try it out. Feel free to fork the code.
 
 ## Usage
 
