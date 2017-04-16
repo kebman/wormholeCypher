@@ -17,13 +17,13 @@ Mark all scanned signatures in-game.
 
 Click the top sig.
 
-Hit [⇧ Shift] and click the bottom sig.
+Hit `[⇧ Shift]` and click the bottom sig.
 
-(Or hold [Ctrl] and click the ones you've scanned thus far.)
+(Or hold `[Ctrl]` and click the ones you've scanned thus far.)
 
-Hit [Ctrl]+[C]
+Hit `[Ctrl]+[C]`
 
-Click inside the text area above and hit [Ctrl]+[V]
+Click inside the text area above and hit `[Ctrl]+[V]`
 
 Next copy-paste bookmarks.
 
@@ -33,35 +33,35 @@ This will add details to the existing signature object, before the Cypher comman
 
 Click the first correctly formatted bookmark.
 
-Hold [Ctrl] and click the bookmarks for the other wormholes.
+Hold `[Ctrl]` and click the bookmarks for the other wormholes.
 
-Hit [Ctrl]+[C]
+Hit `[Ctrl]+[C]`
 
-Click inside the text area above and hit [Ctrl]+[V]
+Click inside the text area above and hit `[Ctrl]+[V]`
 
 Important
 
 Only accepts bookmarks that are very carefully formatted, like so:
 
-\* - [entry-SIG] - [type] - [domain || system] - [exit-SIG]
+`* - [entry-SIG] - [type] - [domain || system] - [exit-SIG]`
 
 Example:
 
-\* - XYZ - K162 - HS
+`* - XYZ - K162 - HS`
 
-\* - XYZ - N770 - J153449 - NRE
+`* - XYZ - N770 - J153449 - NRE`
 
 Legend:
 
-\* is mandatory. It means here is a wormhole
+`*` is mandatory. It means here is a wormhole
 
-\- is mandatory. It serves as separator for readability.
+`-` is mandatory. It serves as separator for readability.
 
-[entry-SIG] is a three letter signature code in the system you're in, or just came from.
+`[entry-SIG]` is a three letter signature code in the system you're in, or just came from.
 
-[type] is the wormhole code, i.e. K162 for an exit, or U210 leads to lowsec, B274 leads to highsec.
+`[type]` is the wormhole code, i.e. `K162` for an exit, or `U210` leads to lowsec, `B274` leads to highsec.
 
-[domain || system] is mandatory. It's where you write what domain or actual system the wormhole leads to. Here are the possible domains:
+`[domain || system]` is mandatory. It's where you write what domain or actual system the wormhole leads to. Here are the possible domains:
 
 - U: Unknown Wormhole
 - D: Dangerous Wormhole
@@ -70,6 +70,6 @@ Legend:
 - LS: Lowsec
 - HS: Highsec
 
-The last fourth - and [exit-SIG] are optional.
+The last fourth `-` and `[exit-SIG]` are optional.
 
-[exit-SIG] is the signature code for the other side of the wormhole, as it shows up in the next system.
+`[exit-SIG]` is the signature code for the other side of the wormhole, as it shows up in the next system.
