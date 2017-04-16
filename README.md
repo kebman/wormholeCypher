@@ -7,7 +7,7 @@ The Cypher commands can be dropped into the Neo4j, the grap database, so you can
 
 The actuall (unfinished) app, a simple HTML5 file containing just CSS, HTML and JavaScript (and some additional notes), is in the  `bin/` folder.
 
-No installation is necessary. Just download the file and open it in your favourite web browser to try it out. Feel free to fork the code.
+You will need a working version of Neo4j beforehand. Otherwise just download the HTML-file and open it in your favourite web browser to try it out. Feel free to fork the code.
 
 ## Usage
 
