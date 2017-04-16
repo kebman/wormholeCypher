@@ -8,10 +8,10 @@ The Cypher commands can be dropped into the Neo4j, the grap database, so you can
 
 ## To Do
 
-1. Write code to parse Bookmark Data
-2. Write code that generate Cypher commands
+1. Write code to parse pasted bookmark-data
+2. Write code that generate the Cypher commands, and print them out
 
-The current app can already parse Signature Data and save it into a simple array of objects.
+The current app can already parse pasted signature-data and save it into a simple array of objects.
 
 ## App Installation
 
