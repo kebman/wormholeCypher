@@ -10,10 +10,16 @@ This app is just for fun.
 
 ## To Do
 
-1. Write code to parse pasted bookmark-data
+1. Write code to parse pasted bookmark-data from EVE Online
 2. Write code that generate the Cypher commands, and print them out
 
 The current app can already parse pasted signature-data and save it into a simple array of objects.
+
+## Done
+
+Cypher testing in Neo4j, and basic data modelling.
+
+Written code to parse probe scanner signature data from EVE Online.
 
 ## App Installation
 
