@@ -78,6 +78,6 @@ The fourth `-` and the last `[exit-SIG]` are optional.
 
 The assumption is that a system _has_ signatures: `(system)-[HAS]->(signature)`. Thus the relationship between signatures and systems are that any list of signatures are naturally linked to their respective system. 
 
-A wormhole consists of two nodes; that of the entry signature that belongs to the system you're currently in, and the exit signature that belongs to the system on the other side of the wormhole, or the next system if you will. Since regular signatures are already linked to their respective systems, the second step is to link the wormhole entry-signature in one system to the wormhole exit-signature in the next system: `(entry)-[CONNECTS_TO]->(exit)`.
+A wormhole consists of two nodes; that of the entry signature that belongs to the system you're currently in, and the exit signature that belongs to the system on the other side of the wormhole, or the next system if you will. Since regular signatures are already linked to their respective systems, the second step is to link the wormhole entry-signature in one system to the wormhole exit-signature in the next system: `(entry)-[CONNECTS_TO]->(exit)`, and then make sure the links are timestamped, so you can filter out old links.
 
 And that's basically it. ^^ 
