@@ -91,3 +91,7 @@ The assumption is that a system _has_ signatures: `(system)-[HAS]->(signature)`.
 A wormhole consists of two nodes; that of the entry signature that belongs to the system you're currently in, and the exit signature that belongs to the system on the other side of the wormhole, or the next system if you will. Since regular signatures are already linked to their respective systems, the second step is to link the wormhole entry-signature in one system to the wormhole exit-signature in the next system: `(entry)-[CONNECTS_TO]->(exit)`, and then make sure the links are timestamped, so you can filter out old links.
 
 And that's basically it. ^^ 
+
+## Long Term
+
+Long-term future goal (that may never come to fruition): Add Neo4j-drivers to Node.js, write a nice web UI, and publish single-page application. 
