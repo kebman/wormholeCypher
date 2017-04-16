@@ -1,5 +1,8 @@
 # wormholeCypher
-A small HTML5 app that makes Cypher commands for Neo4j out of pasted text, copied from the EVE Online probe scanner and bookmarks.
+
+Work in progress!
+
+Goal: A small HTML5 app that makes Cypher commands for Neo4j out of pasted text, copied from the EVE Online probe scanner and bookmarks.
 
 The Cypher commands can be dropped into the Neo4j, the grap database, so you can get an overview of your journey in and out of wormhole space.
 
