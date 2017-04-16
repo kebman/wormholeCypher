@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EVE Online signatures to Neo4j Cypher commands</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		textarea {
+			min-width: 350px;
+			height: 200px;
+		}
+		section {
+			width: 75%;
+		}
+		article {
+			width: 45%;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<h1>EVE Online signatures to Neo4j Cypher commands</h1>
+	<p>Just drop in signatures and (correctly formatted) bookmarks!</p>
+	<p>Cypher commands will be generated that you can drop into Neo4j to track your EVE spelunking business.</p>
+</header>
+<section>
+	<article id="sigs">
+		<h1>Signatures</h1>
+		<textarea id="signatures"></textarea>
+		<h1>Usage</h1>
+		<p>Mark all <em>scanned</em> signatures in-game.</p>
+		<p>Click the top sig.</p>
+		<p>Hit [⇧ Shift] and click the bottom sig.</p>
+		<p>(<em>Or hold [Ctrl] and click the ones you've scanned thus far.</em>)</p>
+		<p>Hit [Ctrl]+[C]</p>
+		<p>Click inside the text area above and hit [Ctrl]+[V]</p>
+		<p>Next copy-paste bookmarks.</p>
+		<p>This will add details to the existing signature object, before the Cypher commands are generated.</p>
+	</article>
+	<article id="bms">
+		<h1>Bookmarks</h1>
+		<textarea id="bookmarks"></textarea>
+		<h1>Usage</h1>
+		<p>Click the first correctly formatted bookmark.</p>
+		<p>Hold [Ctrl] and click the bookmarks for the other wormholes.</p>
+		<p>Hit [Ctrl]+[C]</p>
+		<p>Click inside the text area above and hit [Ctrl]+[V]</p>
+		<h4>Important</h4>
+		<p>Only accepts bookmarks that are very carefully formatted, like so:</p>
+		<p>* - [entry-SIG] - [type] - [domain || system] - [exit-SIG]</p>
+		<h4>Example:</h4>
+		<p>* - XYZ - K162 - HS</p>
+		<p>* - XYZ - N770 - J153449 - NRE</p>
+		<h4>Legend:</h4>
+		<p>* is mandatory. It means <em>here is a wormhole</em></p>
+		<p>- is mandatory. It serves as separator for readability.</p>
+		<p>[entry-SIG] is a three letter signature code in the system you're in, or just came from.</p>
+		<p>[type] is the wormhole code, i.e. K162 for an exit, or U210 leads to lowsec, B274 leads to highsec.</p>
+		<p>[domain || system] is mandatory. It's where you write what domain or actual system the wormhole leads to. Here are the possible domains:</p>
+		<ul>
+			<li>U: Unknown Wormhole</li>
+			<li>D: Dangerous Wormhole</li>
+			<li>C6: Deadly Wormhole</li>
+			<li>NS: Nullsec</li>
+			<li>LS: Lowsec</li>
+			<li>HS: Highsec</li>
+		</ul>
+		<p>The last fourth - and [exit-SIG] are optional.</p>
+		<p>[exit-SIG] is the signature code for the <em>other side</em> of the wormhole, as it shows up in the next system.</p>
+	</article>
+</section>
+</body>
+<script type="text/javascript">
+var signatures = document.getElementById("signatures");
+var bookmarks = document.getElementById("bookmarks");
+
+signatures.addEventListener('paste', (e)=> {
+	var clipboardData = e.clipboardData;
+	var pastedData = clipboardData.getData('Text');
+
+	var sigs = traverseSigs(pastedData);
+	console.log(sigs);
+
+});
+
+function traverseSigs(data) {
+	var sigsLines = data.split('\n');
+	sigsLines.sort();
+	sigsLines.reverse(); // sort and reverse before reverse before backwards loop
+
+	var sigWords = []; // initiate array
+	for (var i = sigsLines.length - 1; i >= 0; i--) {
+		var words = sigsLines[i].split('\t');
+
+		// temporary object for storing signatures and types
+		// names not implemented yet, bcos I prioritize pure navigation first (and lzy)
+		var sigObj = {
+			sig:words[0],
+			type:words[2]
+		};
+		sigWords.push(sigObj);
+	}
+	return sigWords;
+}
+
+// TO DO #1: Parse bookmarks
+// TO DO #2: Generate Cypher
+
+// List of sigs from J112854 for testing
+/*
+EIA-048	Cosmic Signature	Wormhole	Unstable Wormhole	100,00%	16,09 AU
+XZC-631	Cosmic Signature	Wormhole	Unstable Wormhole	100,00%	7,75 AU
+QXC-722	Cosmic Signature	Wormhole	Unstable Wormhole	100,00%	50,18 AU
+MJI-746	Cosmic Signature	Wormhole		0,00%	1,60 AU
+OYN-706	Cosmic Signature	Gas Site		0,00%	19,14 AU
+CRC-796	Cosmic Signature	Data Site		0,00%	21,55 AU
+QRQ-562	Cosmic Signature	Relic Site		0,00%	55,51 AU
+*/
+
+// Another list of sigs from Hroduko:
+/*
+WOV-010	Cosmic Signature	Combat Site	Angel Watch	100,0%	9,74 AU
+VEY-235	Cosmic Signature	Wormhole	Unstable Wormhole	100,0%	508 km
+UCN-756	Cosmic Signature	Combat Site	Rogue Drone Asteroid Infestation	100,0%	7,05 AU
+*/
+
+
+// Bookmarks for J112854
+/*
+* EIA - 530km	Coordinate	0	J112854	C-C00105	C-R00011	2017.04.15 19:28	Chatarina DeBeers
+* EIA - U210 - LS	Coordinate	0	J112854	C-C00105	C-R00011	2017.04.15 19:16	Chatarina DeBeers
+* LIA - 350km	Coordinate	0	J112854	C-C00105	C-R00011	2017.04.15 19:28	Chatarina DeBeers
+* MJI - 1650km	Coordinate	0	J112854	C-C00105	C-R00011	2017.04.15 19:14	Chatarina DeBeers
+* MJI - N770 - J153449 - NRE	Coordinate	0	J112854	C-C00105	C-R00011	2017.04.15 18:28	Chatarina DeBeers
+* QXC - 400km	Coordinate	0	J112854	C-C00105	C-R00011	2017.04.15 19:32	Chatarina DeBeers
+* QXC - K162 - HS	Coordinate	0	J112854	C-C00105	C-R00011	2017.04.15 19:31	Chatarina DeBeers
+* XZC - 540km	Coordinate	0	J112854	C-C00105	C-R00011	2017.04.15 19:34	Chatarina DeBeers
+* XZC - T405 - D	Coordinate	0	J112854	C-C00105	C-R00011	2017.04.15 19:33	Chatarina DeBeers
+*/
+
+// Bookmarks for Hroduko
+/*
+* VEY - 570km	Coordinate	0	Hroduko	Hulf	Metropolis	2017.04.15 20:54	Chatarina DeBeers
+* VEY - X702 - J112854 - QXC	Coordinate	0	Hroduko	Hulf	Metropolis	2017.04.15 20:47	Chatarina DeBeers
+UCN - Rogue Drone Asteroid Infestation	Coordinate	0	Hroduko	Hulf	Metropolis	2017.04.15 20:49	Chatarina DeBeers
+WOV - Angel Watch	Coordinate	0	Hroduko	Hulf	Metropolis	2017.04.15 20:51	Chatarina DeBeers
+*/
+</script>
+</html>
