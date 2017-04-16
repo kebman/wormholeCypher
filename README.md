@@ -96,4 +96,4 @@ And that's basically it. ^^
 
 ## Long Term
 
-Long-term future goal (that may never come to fruition): Add Neo4j-drivers to Node.js, write a nice web UI, and publish single-page application. A nearer goal could be to implement API calls, so that you can always see what system you're in.
+Long-term future goal (that may never come to fruition): Add Neo4j-drivers to Node.js, write a nice web UI, and publish single-page application. A nearer goal could be to implement API calls, so that you can always see what system you're in, since you don't really need a web domain to do that.
