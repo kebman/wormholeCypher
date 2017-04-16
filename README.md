@@ -70,6 +70,6 @@ Legend:
 - LS: Lowsec
 - HS: Highsec
 
-The last fourth `-` and `[exit-SIG]` are optional.
+The fourth `-` and the last `[exit-SIG]` are optional.
 
 `[exit-SIG]` is the signature code for the other side of the wormhole, as it shows up in the next system.
